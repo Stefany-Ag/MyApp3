@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyApp3</string>
+    <string name="url_base">http://10.0.2.2/</string>
+    <string name="url_img">https://www.serverbpw.com/cm/2020-2/products.php</string>
+    <string name="id">id</string>
+    <string name="name">name</string>
+    <string name="thumbnail_url">thumbnail_url</string>
+    <string name="imag_url">imag_url</string>
+    <string name="price">price</string>
+    <string name="provider">provider</string>
+    <string name="delivery">delivery</string>
+    <string name="desc">desc</string>
+    <string name="error">Tipo de dato incorrecto</string>
+</resources>
