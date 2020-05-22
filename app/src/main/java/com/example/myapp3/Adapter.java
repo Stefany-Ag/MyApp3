@@ -6,13 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.myapp3.modelo.Imagen;
+import com.example.myapp3.modelo.Producto;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 
@@ -20,14 +17,11 @@ public class Adapter extends BaseAdapter {
 
     private static LayoutInflater inflater = null;
     Context contexto;
-    ArrayList<Imagen> img;
-    int ancho, alto;
+    ArrayList<Producto> img;
 
-    public Adapter(Context contexto, ArrayList<Imagen> img, int ancho, int alto) {
+    public Adapter(Context contexto, ArrayList<Producto> img) {
         this.contexto = contexto;
         this.img = img;
-        this.ancho = ancho;
-        this.alto = alto;
         inflater = (LayoutInflater) contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -50,10 +44,9 @@ public class Adapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final View vista = inflater.inflate(R.layout.element_list,null);
         ImageView image = vista.findViewById(R.id.ivImagen);
-        image.setLayoutParams(new ListView.LayoutParams(ancho/alto-20, ancho/alto-20));
         image.setPadding(15,15,15,15);
         Picasso.with(contexto)
-                .load(contexto.getResources().getString(R.string.url_base)+img.get(position).getTumbnail_url())
+                .load(img.get(position).getThumbnail_url())
                 .into(image);
         TextView nombre = vista.findViewById(R.id.tvName);
         TextView proveedor = vista.findViewById(R.id.tvProv);

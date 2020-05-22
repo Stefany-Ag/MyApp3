@@ -1,14 +1,24 @@
 package com.example.myapp3.modelo;
 
 public class Producto {
-    String name, imag_url, desc;
-    long id;
+    int id;
+    String name, thumbnail_url, provider, price, delivery;
 
-    public Producto(long id, String name, String imag_url, String desc) {
+    public Producto(int id, String name, String thumbnail_url, String price, String provider, String delivery) {
         this.id = id;
         this.name = name;
-        this.imag_url = imag_url;
-        this.desc = desc;
+        this.thumbnail_url = thumbnail_url;
+        this.provider = provider;
+        this.price = price;
+        this.delivery = delivery;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -19,27 +29,35 @@ public class Producto {
         this.name = name;
     }
 
-    public String getImag_url() {
-        return imag_url;
+    public String getThumbnail_url() {
+        return thumbnail_url;
     }
 
-    public void setImag_url(String imag_url) {
-        this.imag_url = imag_url;
+    public void setThumbnail_url(String tumbnail_url) {
+        this.thumbnail_url = thumbnail_url;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getProvider() {
+        return provider;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setProvider(String provider) {
+        this.provider = provider;
     }
 
-    public long getId() {
-        return id;
+    public String getPrice() {
+        return price;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(String delivery) {
+        this.delivery = delivery;
     }
 }
